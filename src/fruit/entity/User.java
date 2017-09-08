@@ -51,6 +51,14 @@ public class User {
 		this.address = address;
 		this.tel = tel;
 	}
+	public User() {
+		// TODO Auto-generated constructor stub
+	}
+	@Override
+	public String toString() {
+		return "User [id=" + id + ", userName=" + userName + ", password=" + password + ", address=" + address
+				+ ", tel=" + tel + "]";
+	}
 	
 	
 }

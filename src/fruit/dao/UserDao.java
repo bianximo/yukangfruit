@@ -9,13 +9,13 @@ public interface UserDao {
 	public boolean login(String userName, String password);
 
 	// 用户注册
-	public int regist(String userName, String password, String address, String tel);
+	public int regist(User user);
 
 	// 用户删除
-	public int delete(String userName, String password);
+	public int delete(String userName);
 
 	// 用户更新
-	public int update(String userName, String password, String address, String tel);
+	public int update(User user);
 
 	// 查找所有用户
 	public List<User> findAll();
