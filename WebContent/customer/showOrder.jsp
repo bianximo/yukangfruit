@@ -5,10 +5,13 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>全部产品</title>
-<link href="css/produ.css" rel="stylesheet">
+<title>我的订单</title>
+<script type="text/javascript" src="js/jquery-1.11.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<link href="css/bootstrap.min.css" media="screen" rel="stylesheet"
+	type="text/css" />
+<link href="css/touch.css" rel="stylesheet">
 <link href="css/share.css" rel="stylesheet">
-<script src="js/jquery-1.12.3.js"></script>
 </head>
 <body>
 	<!--顶部导航-->
@@ -19,10 +22,10 @@
 			<div class="headr-nav">
 				<ul>
 					<li><a href="index.jsp">首页</a></li>
-					<li><a href="/yukangfruit/ProdeceServlet"
-						style="color: #4AB344"> <span style="color: #4AB344">全部产品</span></a></li>
+					<li><a href="/yukangfruit/ProdeceServlet">全部产品</a></li>
 					<li><a href="consult.jsp">最新资讯</a></li>
-					<li><a href="/yukangfruit/OrderServlet?method=3">我的订单</a></li>
+					<li><a href="/yukangfruit/OrderServlet?method=3"
+						style="color: #4AB344"><span style="color: #4AB344">我的订单</span></a></li>
 					<li><a href="user.jsp">账号管理</a></li>
 				</ul>
 				<div class="sptopfoot">
@@ -41,7 +44,7 @@
 	<div class="her-banner"></div>
 	<!--banner图片结束-->
 	<div class="content">
-		<!--产品推荐开始-->
+		<!--建议开始-->
 		<div class="recommand clear">
 			<div class="rec-cont clear">
 				<div class="rec-left">
@@ -98,41 +101,42 @@
 				</div>
 
 				<div class="rec-right">
-					<div class="bd">
-						<div class="bd" style="display: block">
-							<c:forEach items="${sessionScope.produList}" var="item">
+					<table class="table table-condensed table-hover">
+						<thead>
+							<tr>
+								<th>订单编号</th>
+								<th>商品名称</th>
+								<th>销售单价</th>
+								<th>数量</th>
+								<th>下单时间</th>
+								<th>运输类型</th>
+								<th>地址</th>
+								<th>小计</th>
+							</tr>
+						</thead>
+						<tbody>
+							<c:forEach items="${sessionScope.orders}" var="item">
+								<tr>
+									<td>${item.getOrderId()}</td>
+									<td>${item.getGoodsName()}</td>
+									<td>${item.getGoodsPrice()}</td>
+									<td>${item.getGoodsNum()}</td>
+									<td>${item.getOrderDate()}</td>
+									<td>${item.getTransType()}</td>
+									<td>${item.getAddress()}</td>
+									<td>${String.format("%.2f",item.getGoodsPrice()*item.getGoodsNum())}</td>
 
-								<div class="rcr">
-									<div class="rcr-top">
-										<img src="${item.getImgPath()}" width="100%">
-									</div>
-									<div class="rcr-bot">
-										<div class="rb-top">${item.getGoodsName() }</div>
-										<div class="second_P">
-											<span class="fk-prop">￥</span> <span class="fk-prop-price">
-												${item.getPrice()} <span class="fk-prop-p">.00</span>
-											</span> <span class="second_Marketprice">￥${item.getPrice()*1.2}</span>
-										</div>
-										<div class="buy">
-											<a class="second_mallBuy"
-												href="/yukangfruit/GoodsDetailServlet?goodsName=${item.getGoodsName()}">
-												<span style="color: white;">购买</span>
-											</a>
-										</div>
-									</div>
-								</div>
-
+								</tr>
 							</c:forEach>
-						</div>
-					</div>
-
+						</tbody>
+					</table>
 				</div>
 
 
 			</div>
 		</div>
 
-		<!--产品推荐结束-->
+		<!--建议结束-->
 	</div>
 	<!--底部-->
 	<div class="footer">
@@ -179,5 +183,5 @@
 		</div>
 	</div>
 </body>
-<script src="js/produ.js"></script>
+<script src="js/touch.js"></script>
 </html>

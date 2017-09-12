@@ -78,5 +78,8 @@ public class Goods {
 		super();
 	}
 	
+	public int getHash(){
+		return this.goodsName.hashCode();
+	}
 	
 }

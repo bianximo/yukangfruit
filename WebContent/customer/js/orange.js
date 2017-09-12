@@ -89,3 +89,6 @@ $('.buttn').click(function(){
 $('.del:eq(0)').click(function(){
     $('.popup:eq(0)').css('display','none')
 })
+$('.middle:eq(0)').click(function(){
+    $('.popup:eq(0)').css('display','none')
+})

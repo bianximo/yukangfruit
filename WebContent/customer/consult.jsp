@@ -17,9 +17,10 @@
         <div class="headr-nav">
             <ul>
                 <li><a href="index.jsp">首页</a> </li>
-                <li><a href="produ.jsp">全部产品</a> </li>
+                <li><a href="/yukangfruit/ProdeceServlet">全部产品</a> </li>
                 <li><a href="consult.jsp" style="color: #4AB344"><span style="color: #4AB344">最新资讯</span></a></li>
-                <li><a href="touch.jsp">我的订单</a> </li>
+                <li><a href="/yukangfruit/OrderServlet?method=3">我的订单</a> </li>
+                <li><a href="user.jsp">账号管理</a></li>
             </ul>
             <div class="sptopfoot">
                 <div class="spbottom"  >

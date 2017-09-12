@@ -20,4 +20,7 @@ public interface GoodsDao {
 	
 	//根据商品名称查询商品
 	public Goods find(String goodsName);
+	
+	//根据商品id查询商品
+	public Goods findById(int id);
 }

@@ -110,4 +110,26 @@ public class GoodsDaoImpl implements GoodsDao {
 		return goods;
 	}
 
+	@Override
+	public Goods findById(int id) {
+		String sql = "SELECT * FROM goods WHERE goodsId = '" + id + "'";
+		Goods goods = new Goods();
+		ResultSet rs = DbUtil.executeQuery(sql);
+		try {
+			if (rs.next()) {
+				goods.setGoodsId(id);
+				goods.setGoodsName(rs.getString("goodsName"));
+				goods.setPrice(rs.getDouble("goodsPrice"));
+				goods.setSale(rs.getInt("goodsSale"));
+				goods.setStock(rs.getInt("goodsStock"));
+				goods.setDesc(rs.getString("goodsDesc"));
+				goods.setImgPath(rs.getString("goodsImgPath"));
+				DbUtil.close();
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return goods;
+	}
+
 }

@@ -14,7 +14,15 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
 <script type="application/x-javascript">
+	
+	
+	
+	
 	 addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } 
+
+
+
+
 </script>
 <!-- //Meta-Tags -->
 
@@ -35,21 +43,21 @@
 
 		<div class="login w3layouts agileits">
 			<h2>登 录</h2>
-			<form action="#" method="post">
-				<input type="text" Name="Userame" placeholder="用户名" required="">
+			<form action="LoginServlet" method="post">
+				<input type="text" Name="Username" placeholder="用户名" required="">
 				<input type="password" Name="Password" placeholder="密码" required="">
-			</form>
-			<ul class="tick w3layouts agileits">
-				<li><input type="checkbox" id="brand1" value=""> <label
-					for="brand1"><span></span>记住我</label> <input type="checkbox"
-					id="brand2" value=""> <label for="brand2"><span></span>我是商户</label>
-				</li>
-			</ul>
-			<div class="send-button w3layouts agileits">
-				<form>
+
+				<ul class="tick w3layouts agileits">
+					<li><input type="checkbox" id="brand1" value="remerber" name="Remember"> <label
+						for="brand1"><span></span>记住我</label> <input type="checkbox"
+						id="brand2" value="seller" name="Seller"> <label for="brand2"><span></span>我是商户</label>
+					</li>
+				</ul>
+
+				<div class="send-button w3layouts agileits">
 					<input type="submit" value="登 录">
-				</form>
-			</div>
+				</div>
+			</form>
 			<a href="#">记住密码?</a>
 
 			<div class="social-icons w3layouts agileits">
@@ -69,23 +77,20 @@
 			</div>
 			<div class="clear"></div>
 		</div>
-		<div class="copyrights">
-			Collect from <a href="http://www.cssmoban.com/">企业网站模板</a>
-		</div>
 		<div class="register w3layouts agileits">
 			<h2>注 册</h2>
-			<form action="#" method="post">
+			<form action="RegistServlet" method="post">
 				<input type="text" Name="Name" placeholder="用户名" required="">
-				<input type="text" Name="Email" placeholder="邮箱" required="">
 				<input type="password" Name="Password" placeholder="密码" required="">
-				<input type="text" Name="Phone Number" placeholder="手机号码"
-					required="">
+				<input type="text" Name="Address" placeholder="地址" required="">
+				<input type="text" Name="Tel" placeholder="手机号码" required="">
+				<div class="send-button w3layouts agileits">
+					<form>
+						<input type="submit" value="免费注册">
+					</form>
+				</div>
 			</form>
-			<div class="send-button w3layouts agileits">
-				<form>
-					<input type="submit" value="免费注册">
-				</form>
-			</div>
+
 			<div class="clear"></div>
 		</div>
 
