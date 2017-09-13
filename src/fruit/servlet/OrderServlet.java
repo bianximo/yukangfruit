@@ -83,7 +83,7 @@ public class OrderServlet extends HttpServlet {
 		UserDao ud = new UserDaoImpl();
 		OrderDao od = new OrderDaoImpl();
 		for (Goods g : buyGoods.keySet()) {
-			Order o = new Order(g.getGoodsName(), ud.findByUserName(userName).getId(), buyGoods.get(g), g.getPrice(),
+			Order o = new Order(g.getGoodsName(), ud.findByUserName(userName).getId(), buyGoods.get(g), g.getGoodsPrice(),
 					transType, address);
 			od.add(o);
 		}
@@ -102,7 +102,7 @@ public class OrderServlet extends HttpServlet {
 			Goods g = gd.find(string);
 			int num = Integer.parseInt(goodsNum);
 			buyGoods.put(g, num);
-			total += g.getPrice() * num;
+			total += g.getGoodsPrice() * num;
 		}
 
 		session.setAttribute("buyGoods", buyGoods);

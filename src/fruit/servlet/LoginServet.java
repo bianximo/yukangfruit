@@ -38,25 +38,21 @@ public class LoginServet extends HttpServlet {
 		if (request.getAttribute("Username") != null && request.getAttribute("Password") != null) {
 			username = (String) request.getAttribute("Username");
 			password = (String) request.getAttribute("Password");
-		}else{
+		} else {
 			username = request.getParameter("Username");
 			password = request.getParameter("Password");
 		}
-		String seller = request.getParameter("Seller");
-		if(seller!=null&&seller.equals("seller")){
-			//登录到后台管理系统
-		}else{
-			UserDao ud = new UserDaoImpl();
-			boolean login = ud.login(username, password);
-			if(login){
-				request.getSession().setAttribute("Username", username);
-				response.sendRedirect("customer/index.jsp");
-			}else{
-				request.setAttribute("LoginFlag", false);
-				RequestDispatcher dispatcher = request.getRequestDispatcher("/login.jsp");
-				dispatcher.forward(request, response);
-			}
+		UserDao ud = new UserDaoImpl();
+		boolean login = ud.login(username, password);
+		if (login) {
+			request.getSession().setAttribute("Username", username);
+			response.sendRedirect("customer/index.jsp");
+		} else {
+			request.setAttribute("LoginFlag", false);
+			RequestDispatcher dispatcher = request.getRequestDispatcher("/login.jsp");
+			dispatcher.forward(request, response);
 		}
+
 	}
 
 	/**

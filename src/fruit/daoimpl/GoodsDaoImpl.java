@@ -11,6 +11,8 @@ import fruit.util.DbUtil;
 
 public class GoodsDaoImpl implements GoodsDao {
 
+	DbUtil db = null;
+	
 	@Override
 	public int add(Goods goods) {
 
@@ -19,11 +21,11 @@ public class GoodsDaoImpl implements GoodsDao {
 		int result = 0;
 		try {
 			ps.setString(1, goods.getGoodsName());
-			ps.setDouble(2, goods.getPrice());
-			ps.setInt(3, goods.getSale());
-			ps.setInt(4, goods.getStock());
-			ps.setString(5, goods.getDesc());
-			ps.setString(6, goods.getImgPath());
+			ps.setDouble(2, goods.getGoodsPrice());
+			ps.setInt(3, goods.getGoodsSale());
+			ps.setInt(4, goods.getGoodsStock());
+			ps.setString(5, goods.getGoodsDesc());
+			ps.setString(6, goods.getGoodsImgPath());
 			result = ps.executeUpdate();
 			DbUtil.close();
 		} catch (Exception e) {
@@ -42,11 +44,11 @@ public class GoodsDaoImpl implements GoodsDao {
 		int result = 0;
 		try {
 			ps.setString(1, goods.getGoodsName());
-			ps.setDouble(2, goods.getPrice());
-			ps.setInt(3, goods.getSale());
-			ps.setInt(4, goods.getStock());
-			ps.setString(5, goods.getDesc());
-			ps.setString(6, goods.getImgPath());
+			ps.setDouble(2, goods.getGoodsPrice());
+			ps.setInt(3, goods.getGoodsSale());
+			ps.setInt(4, goods.getGoodsStock());
+			ps.setString(5, goods.getGoodsDesc());
+			ps.setString(6, goods.getGoodsImgPath());
 			ps.setInt(7, goods.getGoodsId());
 			result = ps.executeUpdate();
 		} catch (Exception e) {
@@ -56,6 +58,15 @@ public class GoodsDaoImpl implements GoodsDao {
 		return result;
 	}
 
+	@Override
+	public int delete(int goodsid) {
+		db = new DbUtil();
+		String sql = "DELETE FROM goods WHERE goodsid = "+goodsid;
+		int result = db.executeUpdate(sql);
+		db.close();
+		return result;
+	}
+	
 	@Override
 	public int delete(String goodsName) {
 		String sql = "DELETE FROM goods WHERE goodsName = '" + goodsName + "'";
@@ -74,11 +85,11 @@ public class GoodsDaoImpl implements GoodsDao {
 				Goods goods = new Goods();
 				goods.setGoodsId(rs.getInt("goodsID"));
 				goods.setGoodsName(rs.getString("goodsName"));
-				goods.setPrice(rs.getDouble("goodsPrice"));
-				goods.setSale(rs.getInt("goodsSale"));
-				goods.setStock(rs.getInt("goodsStock"));
-				goods.setDesc(rs.getString("goodsDesc"));
-				goods.setImgPath(rs.getString("goodsImgPath"));
+				goods.setGoodsPrice(rs.getDouble("goodsPrice"));
+				goods.setGoodsSale(rs.getInt("goodsSale"));
+				goods.setGoodsStock(rs.getInt("goodsStock"));
+				goods.setGoodsDesc(rs.getString("goodsDesc"));
+				goods.setGoodsImgPath(rs.getString("goodsImgPath"));
 				list.add(goods);
 			}
 		} catch (Exception e) {
@@ -97,11 +108,11 @@ public class GoodsDaoImpl implements GoodsDao {
 			if (rs.next()) {
 				goods.setGoodsId(rs.getInt("goodsID"));
 				goods.setGoodsName(goodsName);
-				goods.setPrice(rs.getDouble("goodsPrice"));
-				goods.setSale(rs.getInt("goodsSale"));
-				goods.setStock(rs.getInt("goodsStock"));
-				goods.setDesc(rs.getString("goodsDesc"));
-				goods.setImgPath(rs.getString("goodsImgPath"));
+				goods.setGoodsPrice(rs.getDouble("goodsPrice"));
+				goods.setGoodsSale(rs.getInt("goodsSale"));
+				goods.setGoodsStock(rs.getInt("goodsStock"));
+				goods.setGoodsDesc(rs.getString("goodsDesc"));
+				goods.setGoodsImgPath(rs.getString("goodsImgPath"));
 				DbUtil.close();
 			}
 		} catch (Exception e) {
@@ -119,11 +130,11 @@ public class GoodsDaoImpl implements GoodsDao {
 			if (rs.next()) {
 				goods.setGoodsId(id);
 				goods.setGoodsName(rs.getString("goodsName"));
-				goods.setPrice(rs.getDouble("goodsPrice"));
-				goods.setSale(rs.getInt("goodsSale"));
-				goods.setStock(rs.getInt("goodsStock"));
-				goods.setDesc(rs.getString("goodsDesc"));
-				goods.setImgPath(rs.getString("goodsImgPath"));
+				goods.setGoodsPrice(rs.getDouble("goodsPrice"));
+				goods.setGoodsSale(rs.getInt("goodsSale"));
+				goods.setGoodsStock(rs.getInt("goodsStock"));
+				goods.setGoodsDesc(rs.getString("goodsDesc"));
+				goods.setGoodsImgPath(rs.getString("goodsImgPath"));
 				DbUtil.close();
 			}
 		} catch (Exception e) {

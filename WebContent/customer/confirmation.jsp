@@ -383,10 +383,10 @@
 										<c:forEach items="${sessionScope.buyGoods}" var="item">
 											<tr>
 												<td>${item.key.getGoodsName()}</td>
-												<td>${item.key.getDesc()}</td>
-												<td>${item.key.getPrice()}</td>
+												<td>${item.key.getGoodsDesc()}</td>
+												<td>${item.key.getGoodsPrice()}</td>
 												<td>${item.value}</td>
-												<td>${String.format("%.2f",item.key.getPrice()*item.value)}</td>
+												<td>${String.format("%.2f",item.key.getGoodsPrice()*item.value)}</td>
 											</tr>
 										</c:forEach>
 									</tbody>

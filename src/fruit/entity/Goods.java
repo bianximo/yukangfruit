@@ -3,77 +3,123 @@ package fruit.entity;
 public class Goods {
 	private int goodsId;
 	private String goodsName;
-	private double price;
-	private int sale;
-	private int stock;
-	private String Desc;
-	private String imgPath;
+	private double goodsPrice;
+	private int goodsSale;
+	private int goodsStock;
+	private String goodsDesc;
+	private String goodsImgPath;
+	private String goodsType;
+	private String goodsTimeDate;
+	
+	public Goods(String goodsName, double goodsPrice, int goodsSale, int goodsStock, String goodsDesc,
+			String goodsImgPath, String goodsType, String goodsTimeDate) {
+		super();
+		this.goodsName = goodsName;
+		this.goodsPrice = goodsPrice;
+		this.goodsSale = goodsSale;
+		this.goodsStock = goodsStock;
+		this.goodsDesc = goodsDesc;
+		this.goodsImgPath = goodsImgPath;
+		this.goodsType = goodsType;
+		this.goodsTimeDate = goodsTimeDate;
+	}
+	
 	public int getGoodsId() {
 		return goodsId;
 	}
+
 	public void setGoodsId(int goodsId) {
 		this.goodsId = goodsId;
 	}
+
 	public String getGoodsName() {
 		return goodsName;
 	}
+
 	public void setGoodsName(String goodsName) {
 		this.goodsName = goodsName;
 	}
-	public double getPrice() {
-		return price;
+
+	public double getGoodsPrice() {
+		return goodsPrice;
 	}
-	public void setPrice(double price) {
-		this.price = price;
+
+	public void setGoodsPrice(double goodsPrice) {
+		this.goodsPrice = goodsPrice;
 	}
-	public int getSale() {
-		return sale;
+
+	public int getGoodsSale() {
+		return goodsSale;
 	}
-	public void setSale(int sale) {
-		this.sale = sale;
+
+	public void setGoodsSale(int goodsSale) {
+		this.goodsSale = goodsSale;
 	}
-	public int getStock() {
-		return stock;
+
+	public int getGoodsStock() {
+		return goodsStock;
 	}
-	public void setStock(int stock) {
-		this.stock = stock;
+
+	public void setGoodsStock(int goodsStock) {
+		this.goodsStock = goodsStock;
 	}
-	public String getDesc() {
-		return Desc;
+
+	public String getGoodsDesc() {
+		return goodsDesc;
 	}
-	public void setDesc(String desc) {
-		Desc = desc;
+
+	public void setGoodsDesc(String goodsDesc) {
+		this.goodsDesc = goodsDesc;
 	}
-	public String getImgPath() {
-		return imgPath;
+
+	public String getGoodsImgPath() {
+		return goodsImgPath;
 	}
-	public void setImgPath(String imgPath) {
-		this.imgPath = imgPath;
+
+	public void setGoodsImgPath(String goodsImgPath) {
+		this.goodsImgPath = goodsImgPath;
 	}
-	@Override
-	public String toString() {
-		return "Goods [goodsId=" + goodsId + ", goodsName=" + goodsName + ", price=" + price + ", sale=" + sale
-				+ ", stock=" + stock + ", Desc=" + Desc + ", imgPath=" + imgPath + "]";
+
+	public String getGoodsType() {
+		return goodsType;
 	}
-	public Goods(int goodsId, String goodsName, double price, int sale, int stock, String desc, String imgPath) {
+
+	public void setGoodsType(String goodsType) {
+		this.goodsType = goodsType;
+	}
+
+	public String getGoodsTimeDate() {
+		return goodsTimeDate;
+	}
+
+	public void setGoodsTimeDate(String goodsTimeDate) {
+		this.goodsTimeDate = goodsTimeDate;
+	}
+
+	
+	public Goods(String goodsName, double goodsPrice, int goodsSale, int goodsStock, String goodsDesc,
+			String goodsImgPath) {
+		super();
+		this.goodsName = goodsName;
+		this.goodsPrice = goodsPrice;
+		this.goodsSale = goodsSale;
+		this.goodsStock = goodsStock;
+		this.goodsDesc = goodsDesc;
+		this.goodsImgPath = goodsImgPath;
+	}
+
+	public Goods(int goodsId, String goodsName, double goodsPrice, int goodsSale, int goodsStock, String goodsDesc,
+			String goodsImgPath) {
 		super();
 		this.goodsId = goodsId;
 		this.goodsName = goodsName;
-		this.price = price;
-		this.sale = sale;
-		this.stock = stock;
-		Desc = desc;
-		this.imgPath = imgPath;
+		this.goodsPrice = goodsPrice;
+		this.goodsSale = goodsSale;
+		this.goodsStock = goodsStock;
+		this.goodsDesc = goodsDesc;
+		this.goodsImgPath = goodsImgPath;
 	}
-	public Goods(String goodsName, double price, int sale, int stock, String desc, String imgPath) {
-		super();
-		this.goodsName = goodsName;
-		this.price = price;
-		this.sale = sale;
-		this.stock = stock;
-		Desc = desc;
-		this.imgPath = imgPath;
-	}
+
 	public Goods() {
 		super();
 	}
@@ -81,5 +127,6 @@ public class Goods {
 	public int getHash(){
 		return this.goodsName.hashCode();
 	}
+	
 	
 }

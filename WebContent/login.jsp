@@ -49,8 +49,7 @@
 
 				<ul class="tick w3layouts agileits">
 					<li><input type="checkbox" id="brand1" value="remerber" name="Remember"> <label
-						for="brand1"><span></span>记住我</label> <input type="checkbox"
-						id="brand2" value="seller" name="Seller"> <label for="brand2"><span></span>我是商户</label>
+						for="brand1"><span></span>记住我</label> 
 					</li>
 				</ul>
 

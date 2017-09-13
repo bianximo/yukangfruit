@@ -104,14 +104,14 @@
 
 								<div class="rcr">
 									<div class="rcr-top">
-										<img src="${item.getImgPath()}" width="100%">
+										<img src="${item.getGoodsImgPath()}" width="100%">
 									</div>
 									<div class="rcr-bot">
 										<div class="rb-top">${item.getGoodsName() }</div>
 										<div class="second_P">
 											<span class="fk-prop">￥</span> <span class="fk-prop-price">
-												${item.getPrice()} <span class="fk-prop-p">.00</span>
-											</span> <span class="second_Marketprice">￥${item.getPrice()*1.2}</span>
+												${item.getGoodsPrice()} <span class="fk-prop-p">.00</span>
+											</span> <span class="second_Marketprice">￥${String.format("%.2f",item.getGoodsPrice()*1.2)}</span>
 										</div>
 										<div class="buy">
 											<a class="second_mallBuy"

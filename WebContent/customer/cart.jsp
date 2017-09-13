@@ -83,10 +83,10 @@
 										<td colspan="1" class="goods"><label> 
 										<input type="checkbox" name="isBuy" class="check-one check" value="${item.key.getGoodsName()}"/>${item.key.getGoodsName() }
 										</label></td>
-										<td style="padding-top: 1.1rem;" align="center">${item.key.getDesc() }</td>
+										<td style="padding-top: 1.1rem;" align="center">${item.key.getGoodsDesc() }</td>
 										<td class="selling-price number small-bold-red text-right"
 											style="padding-top: 1.1rem;"
-											data-bind="${item.key.getPrice() }">${item.key.getPrice() }</td>
+											data-bind="${item.key.getGoodsPrice() }">${item.key.getGoodsPrice() }</td>
 										<td>
 											<div class="input-group input-group-sm">
 												<span class="input-group-addon minus">-</span> 

@@ -46,7 +46,7 @@
 		<div class="cont-top">
 			<div class="cont-left">
 				<div class="ctl-img">
-					<img src="${sessionScope.goods.getImgPath() }">
+					<img src="${sessionScope.goods.getGoodsImgPath() }">
 				</div>
 				<div class="collect">
 					<div class="coll">
@@ -76,7 +76,7 @@
 				</div>
 				<div class="pic">
 					<span class="ppi">价格:</span> <span class="f-mallUnit">￥</span> <span
-						class="pcc">${sessionScope.goods.getPrice() }</span>
+						class="pcc">${sessionScope.goods.getGoodsPrice() }</span>
 				</div>
 				<div class="pict">
 					<div class="f-proSatifySumWrap">
@@ -91,7 +91,7 @@
 					</div>
 				</div>
 				<div class="pic">
-					<span class="ppi">商品描述:</span> <span class="f-mallUnit">${sessionScope.goods.getDesc() }</span>
+					<span class="ppi">商品描述:</span> <span class="f-mallUnit">${sessionScope.goods.getGoodsDesc() }</span>
 				</div>
 				<form action="/yukangfruit/CartServlet" method="get">
 					<div class="fk-pd5MallCartCount">

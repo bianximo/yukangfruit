@@ -4,4 +4,13 @@
   <welcome-file-list>
     <welcome-file>login.jsp</welcome-file>
   </welcome-file-list>
+  <servlet>
+    <servlet-name>goodsServlet</servlet-name>
+    <servlet-class>fruit.servlet.AdminGoodsServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>goodsServlet</servlet-name>
+    <url-pattern>/goodsServlet</url-pattern>
+  </servlet-mapping>
+  
 </web-app>
